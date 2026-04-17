@@ -19,4 +19,5 @@ class EventController extends Controller
     {
         return view('ticket');
     }
+
 }

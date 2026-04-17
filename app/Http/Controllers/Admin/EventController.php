@@ -11,4 +11,8 @@ class EventController extends Controller
     {
         return view('admin.events');
     }
+        public function transactions()
+{
+    return view('admin.transactions');
+}
 }
