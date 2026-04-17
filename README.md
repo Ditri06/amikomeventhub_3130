@@ -63,7 +63,7 @@ link: https://amikomeventhub-3130-main-qndzvs.free.laravel.cloud/
 Tugas 2:
 1.Halaman Dashboard:https://amikomeventhub-3130-main-qndzvs.free.laravel.cloud/admin
 2.Halaman Event:https://amikomeventhub-3130-main-qndzvs.free.laravel.cloud/admin/events
-3.Halaman Transaksi:
+3.Halaman Transaksi:https://amikomeventhub-3130-main-qndzvs.free.laravel.cloud/admin/transaksi
 4.Halaman Beranda :https://amikomeventhub-3130-main-qndzvs.free.laravel.cloud/
 5.Halaman Detail Event:https://amikomeventhub-3130-main-qndzvs.free.laravel.cloud/event/1
 6.halaman Checkout:https://amikomeventhub-3130-main-qndzvs.free.laravel.cloud/checkout
