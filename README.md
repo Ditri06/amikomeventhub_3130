@@ -67,4 +67,5 @@ Tugas 2:
 4.Halaman Beranda :https://amikomeventhub-3130-main-qndzvs.free.laravel.cloud/
 5.Halaman Detail Event:https://amikomeventhub-3130-main-qndzvs.free.laravel.cloud/event/1
 6.halaman Checkout:https://amikomeventhub-3130-main-qndzvs.free.laravel.cloud/checkout
+7.Halaman Kategori:https://amikomeventhub-3130-main-qndzvs.free.laravel.cloud/admin/categories
 
