@@ -27,8 +27,8 @@
                     <td class="px-8 py-6">1</td>
                     <td class="px-8 py-6 font-bold">Seminar</td>
                     <td class="px-8 py-6 text-center space-x-2">
-                        <button class="px-4 py-2 bg-yellow-400 text-white rounded-lg font-bold">Edit</button>
-                        <button class="px-4 py-2 bg-red-500 text-white rounded-lg font-bold">Hapus</button>
+                       <button class="px-4 py-2 bg-indigo-50 text-indigo-600 rounded-lg text-sm font-bold hover:bg-indigo-100 transition mr-2">Edit</button>
+                        <button class="px-4 py-2 bg-rose-50 text-rose-600 rounded-lg text-sm font-bold hover:bg-rose-100 transition">Hapus</button>
                     </td>
                 </tr>
 
@@ -36,8 +36,8 @@
                     <td class="px-8 py-6">2</td>
                     <td class="px-8 py-6 font-bold">Konser</td>
                     <td class="px-8 py-6 text-center space-x-2">
-                        <button class="px-4 py-2 bg-yellow-400 text-white rounded-lg font-bold">Edit</button>
-                        <button class="px-4 py-2 bg-red-500 text-white rounded-lg font-bold">Hapus</button>
+                        <button class="px-4 py-2 bg-indigo-50 text-indigo-600 rounded-lg text-sm font-bold hover:bg-indigo-100 transition mr-2">Edit</button>
+                        <button class="px-4 py-2 bg-rose-50 text-rose-600 rounded-lg text-sm font-bold hover:bg-rose-100 transition">Hapus</button>
                     </td>
                 </tr>
 
@@ -45,8 +45,8 @@
                     <td class="px-8 py-6">3</td>
                     <td class="px-8 py-6 font-bold">Workshop</td>
                     <td class="px-8 py-6 text-center space-x-2">
-                        <button class="px-4 py-2 bg-yellow-400 text-white rounded-lg font-bold">Edit</button>
-                        <button class="px-4 py-2 bg-red-500 text-white rounded-lg font-bold">Hapus</button>
+                        <button class="px-4 py-2 bg-indigo-50 text-indigo-600 rounded-lg text-sm font-bold hover:bg-indigo-100 transition mr-2">Edit</button>
+                        <button class="px-4 py-2 bg-rose-50 text-rose-600 rounded-lg text-sm font-bold hover:bg-rose-100 transition">Hapus</button>
                     </td>
                 </tr>
 
