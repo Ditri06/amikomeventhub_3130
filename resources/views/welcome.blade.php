@@ -153,4 +153,62 @@
             </div>
         </div>
     </section>
+
+    <!--patner-->
+        <!-- SECTION KATEGORI -->
+        <section class="max-w-7xl mx-auto px-6 py-20">
+
+            <h2 class="text-3xl font-extrabold mb-10">
+                Kategori Event
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                @foreach($categories as $category)
+
+                <div class="bg-white rounded-2xl shadow p-6 text-center hover:shadow-lg transition">
+
+                    <h3 class="font-bold text-lg text-indigo-600">
+                        {{ $category->name }}
+                    </h3>
+
+                </div>
+
+                @endforeach
+
+            </div>
+
+        </section>
+
+        <!-- SECTION PARTNER -->
+        <section class="max-w-7xl mx-auto px-6 py-20">
+
+            <h2 class="text-3xl font-extrabold mb-10 text-center">
+                Partner Kami
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                @foreach($partners as $partner)
+
+                <div class="bg-white rounded-2xl shadow p-6 flex flex-col items-center hover:shadow-lg transition">
+
+                    @if($partner->logo_url)
+
+                   <img src="{{ asset('storage/' . $partner->logo_url) }}"
+                    class="w-32 h-32 object-contain bg-white p-2 rounded-xl mb-4">
+
+                    @endif
+
+                    <h3 class="font-bold text-center">
+                        {{ $partner->name }}
+                    </h3>
+
+                </div>
+
+                @endforeach
+
+            </div>
+
+        </section>
 @endsection

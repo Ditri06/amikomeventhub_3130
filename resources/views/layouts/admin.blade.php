@@ -80,6 +80,29 @@ transition">
                 </svg>
                 Kelola Kategori
             </a>
+
+            <a href="{{ route('admin.partners.index') }}"
+class="flex items-center gap-3 px-4 py-3
+{{ request()->routeIs('admin.partners.*')
+? 'bg-indigo-800 text-white'
+: 'hover:bg-indigo-800 text-indigo-100' }}
+rounded-xl font-bold transition">
+
+    <svg class="w-5 h-5 text-indigo-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24">
+
+        <path stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 20h5V4H2v16h5m10 0v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6m10 0H7">
+        </path>
+
+    </svg>
+
+    Kelola Partner
+</a>
         </nav>
         <div class="pt-6 border-t border-indigo-800">
             <form action="#" method="POST">

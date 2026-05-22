@@ -11,7 +11,7 @@
 
 <nav class="bg-white shadow-md p-4 flex justify-between items-center">
     <h1 class="text-xl font-bold text-blue-600">AmikomEventHub</h1>
-    
+
     <div class="space-x-3">
         <a href="/profil" class="text-gray-700 hover:text-blue-500">Profil</a>
         <a href="/katalog" class="text-gray-700 hover:text-blue-500">Katalog</a>
@@ -35,7 +35,7 @@
 
     <div class="grid md:grid-cols-3 gap-6">
 
-     
+
         <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg hover:scale-105 transition text-center">
             <h4 class="text-xl font-semibold mb-2">Profil</h4>
             <p class="text-gray-600 mb-4">Lihat informasi data diri praktikan</p>
@@ -44,7 +44,7 @@
             </a>
         </div>
 
-   
+
         <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg hover:scale-105 transition text-center">
             <h4 class="text-xl font-semibold mb-2">Katalog Event</h4>
             <p class="text-gray-600 mb-4">Jelajahi daftar event kampus</p>
@@ -53,7 +53,7 @@
             </a>
         </div>
 
-      
+
         <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg hover:scale-105 transition text-center">
             <h4 class="text-xl font-semibold mb-2">Bantuan</h4>
             <p class="text-gray-600 mb-4">Lihat FAQ dan panduan penggunaan</p>
