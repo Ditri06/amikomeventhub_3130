@@ -69,3 +69,7 @@ Tugas 2:
 6.halaman Checkout:https://amikomeventhub-3130-main-qndzvs.free.laravel.cloud/checkout
 7.Halaman Kategori:https://amikomeventhub-3130-main-qndzvs.free.laravel.cloud/admin/categories
 
+Tugas 4 CRUD
+Halaman Dashboard Admin:https://amikomeventhub-3130-main-qndzvs.free.laravel.cloud/admin/events
+
+
