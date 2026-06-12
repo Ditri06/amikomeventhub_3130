@@ -9,14 +9,19 @@ use  App\Http\Controllers\Admin\EventController  as  EventAdminController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\AuthController;
-
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\Admin\TransactionController;
 
 // USER AREA
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/event/1', [EventController::class, 'show'])->name('events.show');
-Route::get('/checkout', [EventController::class, 'checkout'])->name('checkout');
+//Route::get('/checkout', [EventController::class, 'checkout'])->name('checkout');
 Route::get('/my-ticket', [EventController::class, 'ticket'])->name('ticket');
+Route::get('/checkout/{event}', [CheckoutController::class, 'create'])
+    ->name('checkout.create');
 
+Route::post('/checkout/{event}', [CheckoutController::class, 'store'])
+    ->name('checkout.store');
 // ADMIN AREA
 //Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
    // Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
@@ -53,7 +58,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/categories', [CategoryController::class, 'index'])
             ->name('categories.index');
 
-        Route::get('/transaksi', [EventAdminController::class, 'transactions'])
+        //Route::get('/transaksi', [EventAdminController::class, 'transactions'])
+            //->name('transactions.index');
+        Route::get('/transactions', [TransactionController::class, 'index'])
             ->name('transactions.index');
     });
 });
