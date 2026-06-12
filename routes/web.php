@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\DashboardController;
 use  App\Http\Controllers\Admin\EventController  as  EventAdminController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\AuthController;
+
 
 // USER AREA
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -23,19 +25,37 @@ Route::get('/my-ticket', [EventController::class, 'ticket'])->name('ticket');
     //Route::get('/transaksi', [AdminEventController::class, 'transactions'])->name('transactions.index');
     // });
 
+// Redirect login Laravel ke login admin
+Route::get('/login', function () {
+    return redirect()->route('admin.login');
+})->name('login');
+
+// ADMIN AREA
 Route::prefix('admin')->name('admin.')->group(function () {
+     // LOGIN ADMIN
+    Route::get('/login', [AuthController::class, 'showLogin'])
+        ->name('login');
 
-    Route::get('/', [DashboardController::class, 'index'])
-        ->name('dashboard');
+    Route::post('/login', [AuthController::class, 'login'])
+        ->name('login.post');
 
-    Route::resource('events', EventAdminController::class);
+    Route::post('/logout', [AuthController::class, 'logout'])
+        ->name('logout');
 
-    Route::get('/categories', [CategoryController::class, 'index'])
-        ->name('categories.index');
+     // ROUTE YANG DILINDUNGI
+    Route::middleware(['auth', 'admin'])->group(function () {
 
-    Route::get('/transaksi', [EventAdminController::class, 'transactions'])
-        ->name('transactions.index');
+        Route::get('/', [DashboardController::class, 'index'])
+            ->name('dashboard');
 
+        Route::resource('events', EventAdminController::class);
+
+        Route::get('/categories', [CategoryController::class, 'index'])
+            ->name('categories.index');
+
+        Route::get('/transaksi', [EventAdminController::class, 'transactions'])
+            ->name('transactions.index');
+    });
 });
 
 Route::get('/', function () {
