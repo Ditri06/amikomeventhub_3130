@@ -22,6 +22,8 @@ Route::get('/checkout/{event}', [CheckoutController::class, 'create'])
 
 Route::post('/checkout/{event}', [CheckoutController::class, 'store'])
     ->name('checkout.store');
+Route::get('/payment/{order_id}', [\App\Http\Controllers\CheckoutController::class, 'payment'])->name('checkout.payment');
+Route::get('/success/{order_id}', [\App\Http\Controllers\CheckoutController::class, 'success'])->name('checkout.success');
 // ADMIN AREA
 //Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
    // Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
@@ -65,9 +67,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     });
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+ //   return view('welcome');
+//});
 Route::get('/tentang', function () {
     return '<h1>Ini adalah Halaman Tentang Aplikasi Event Hub</h1>';
 });
