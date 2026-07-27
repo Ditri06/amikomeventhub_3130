@@ -58,7 +58,31 @@ focus:border-indigo-600 outline-none transition font-medium" required>
 
         </div>
 
+        <div>
 
+    <label class="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wide">
+        Penyelenggara / Partner
+    </label>
+
+    <select name="partner_id" class="w-full px-5 py-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-600 outline-none transition font-medium" required>
+
+        <option value="">Pilih Penyelenggara</option>
+
+        @foreach($partners as $partner)
+
+            <option value="{{ $partner->id }}" {{ old('partner_id') == $partner->id ? 'selected' : '' }}>
+                {{ $partner->name }}
+            </option>
+
+        @endforeach
+
+    </select>
+
+    @error('partner_id')
+        <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
+    @enderror
+
+</div>
 
         <div>
 

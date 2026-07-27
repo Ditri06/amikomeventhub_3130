@@ -49,6 +49,50 @@
          </div>
      </div>
 
+        <!-- Grafik Pertumbuhan -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+
+        {{-- Grafik Pertumbuhan Pengguna --}}
+        <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
+
+            <div class="mb-6">
+                <h3 class="font-black text-xl text-slate-800">
+                    Pertumbuhan Pengguna
+                </h3>
+
+                <p class="text-sm text-slate-400 mt-1">
+                    Jumlah pengguna yang terdaftar setiap bulan pada tahun {{ now()->year }}.
+                </p>
+            </div>
+
+            <div class="relative h-72">
+                <canvas id="userGrowthChart"></canvas>
+            </div>
+
+        </div>
+
+
+        {{-- Grafik Pertumbuhan Event --}}
+        <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
+
+            <div class="mb-6">
+                <h3 class="font-black text-xl text-slate-800">
+                    Pertumbuhan Event
+                </h3>
+
+                <p class="text-sm text-slate-400 mt-1">
+                    Jumlah event yang dibuat setiap bulan pada tahun {{ now()->year }}.
+                </p>
+            </div>
+
+            <div class="relative h-72">
+                <canvas id="eventGrowthChart"></canvas>
+            </div>
+
+        </div>
+
+    </div>
+
      <!-- Latest Sales Table -->
      <div class="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
          <div class="p-8 border-b flex justify-between items-center">
@@ -96,3 +140,108 @@
          </div>
      </div>
      @endsection
+
+     @push('scripts')
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+    // =====================================================
+    // GRAFIK PERTUMBUHAN PENGGUNA
+    // =====================================================
+
+    const userChart = document.getElementById('userGrowthChart');
+
+    new Chart(userChart, {
+        type: 'line',
+
+        data: {
+            labels: @json($userChartLabels),
+
+            datasets: [{
+                label: 'Pengguna Baru',
+
+                data: @json($userChartData),
+
+                borderWidth: 3,
+
+                tension: 0.4,
+
+                fill: false,
+
+                pointRadius: 4
+            }]
+        },
+
+        options: {
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            plugins: {
+                legend: {
+                    display: true
+                }
+            },
+
+            scales: {
+                y: {
+                    beginAtZero: true,
+
+                    ticks: {
+                        precision: 0
+                    }
+                }
+            }
+        }
+    });
+
+
+    // =====================================================
+    // GRAFIK PERTUMBUHAN EVENT
+    // =====================================================
+
+    const eventChart = document.getElementById('eventGrowthChart');
+
+    new Chart(eventChart, {
+        type: 'bar',
+
+        data: {
+            labels: @json($eventChartLabels),
+
+            datasets: [{
+                label: 'Event Dibuat',
+
+                data: @json($eventChartData),
+
+                borderWidth: 1
+            }]
+        },
+
+        options: {
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            plugins: {
+                legend: {
+                    display: true
+                }
+            },
+
+            scales: {
+                y: {
+                    beginAtZero: true,
+
+                    ticks: {
+                        precision: 0
+                    }
+                }
+            }
+        }
+    });
+
+</script>
+
+@endpush

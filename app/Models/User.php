@@ -22,6 +22,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'google_id',
+        'role',
     ];
 
     /**
@@ -34,6 +36,15 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+     public function partner()
+    {
+        return $this->hasOne(Partner::class);
+    }
     /**
      * Get the attributes that should be cast.
      *
